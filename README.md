@@ -1,6 +1,3 @@
-Below is the README translated into GitHub Markdown format, with all sections preserved:
-
-```md
 # XBC1 and ARD/ARH Archiver
 
 A tool for working with Xenoblade Chronicles file formats: **XBC1, ARD, and ARH**.
