@@ -1,53 +1,57 @@
-# XBC1 и ARD/ARH Архиватор
+Below is the README translated into GitHub Markdown format, with all sections preserved:
 
-Инструмент для работы с форматами файлов Xenoblade Chronicles: XBC1, ARD и ARH.
+```md
+# XBC1 and ARD/ARH Archiver
 
-## Возможности
+A tool for working with Xenoblade Chronicles file formats: **XBC1, ARD, and ARH**.
 
-- Распаковка XBC1 файлов
-- Упаковка файлов в формат XBC1
-- Распаковка ARD архивов с использованием ARH файлов
-- Создание новых ARD/ARH архивов
-- Фильтрация файлов по типу (например, только BDAT)
-- Многопоточная обработка для высокой производительности
+## Features
+- Extracts XBC1 files
+- Packs files into XBC1 format
+- Extracts ARD archives using ARH files
+- Creates new ARD/ARH archives
+- Filters files by type (e.g., only BDAT)
+- Multithreaded processing for high performance
 
-## Установка
+## Installation
 
+### Install dependencies
 ```bash
-# Установка зависимостей
 pip install zstandard tqdm
 ```
 
-## Использование
+## Usage
 
-### Распаковка XBC1 файла
-
+### Extract an XBC1 file
 ```bash
 python xbc1_tool.py input.xbc1 [output_file]
 ```
 
-### Упаковка файла в XBC1
-
+### Pack a file into XBC1 format
 ```bash
 python xbc1_tool.py input.bin -c [output_file]
 ```
 
-### Распаковка ARD архива
+### Extract an ARD archive
 
+#### Extract all files
 ```bash
-# Распаковка всех файлов
 python xbc1_tool.py --ard game.ard game.arh [output_directory]
+```
 
-# Распаковка только BDAT файлов
+#### Extract only BDAT files
+```bash
 python xbc1_tool.py --ard game.ard game.arh [output_directory] --only-bdat
 ```
 
-### Создание ARD архива
+### Create an ARD archive
 
+#### Create an archive without file compression
 ```bash
-# Создание архива без сжатия файлов
 python xbc1_tool.py --create-ard input_directory output.ard output.arh
+```
 
-# Создание архива со сжатием файлов
+#### Create an archive with file compression
+```bash
 python xbc1_tool.py --create-ard input_directory output.ard output.arh --compress-files
 ```
